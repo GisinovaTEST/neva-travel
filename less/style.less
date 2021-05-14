@@ -73,6 +73,8 @@
         .text(OpenSans, 10px, 400, @black); 
     }
     .container{
+        display: flex;
+        flex-direction: column;
         padding: 0 1.2rem; 
     }
     .excursion{
@@ -135,7 +137,7 @@
         }
         &__title{
             .text(OpenSans, 1.4rem, 600, @mobile_title);
-            line-height: 2rem;
+            line-height: 1.5em;
         }
         &__list{
             margin: 2rem 0 0.8rem 0;
@@ -164,6 +166,14 @@
             flex-wrap: wrap;
             margin-left: 3.7rem;
             &__time{
+                margin: 0.2rem 0.6rem;
+                padding: 0.4rem 1rem;
+                background-color: @mobile_btn_time;
+                border-radius: 1.1rem;
+                .text(OpenSans, 1.4rem, 400, @grey);
+                line-height: 2rem;
+            }
+            &__btn{
                 margin: 0.2rem 0.6rem;
                 padding: 0.4rem 1rem;
                 background-color: @mobile_btn_time;
@@ -238,3 +248,99 @@
 // 768px
 // 1024px
 // 1280px
+
+
+@media (min-width:768px) {
+    .container{
+        padding: 1.6rem 1.7rem 2.6rem 2.3rem;
+        flex-direction: column; 
+    }
+    .excursion{
+        display: flex;
+        align-items: center;
+        &__img{      
+            margin-left: 3%;
+            max-width: 45%;
+            height: 100%;
+            overflow: hidden;
+            object-fit: fill;
+            border-radius: 1.6rem;
+            &__label{
+                font-size: 1.6rem;
+                padding: 1.3rem 3.5rem;
+                top: 25%;
+                left: 3%;
+                &-purple{
+                    border-radius: 0;
+                }
+            }
+        }
+        &__title{
+            font-size: 1.8rem;
+            order: -1;            
+        }
+        &__duration{
+            margin: 1.1rem 0 0rem 2.5rem;
+            padding: 0;
+            font-size: 1.4rem;
+        }
+        &__list{
+            margin: 1rem 0rem 0 0;
+            &__item{
+                font-size: 1.4rem;
+            }
+        }
+        &__schedule{
+            margin-top: 1rem;;
+        }
+        &__info{
+            margin: 2.4rem 0 0 0;
+            box-sizing: border-box;
+            justify-content: left;
+            &__price{
+                width: 30%;
+            }
+            
+        }
+    }
+}
+
+// @media (min-width:926px){
+//     .excursion{
+//         &__img{
+//             &__label{
+//                 top: 35%;
+//             }
+//         }
+//     }
+// }
+
+@media (min-width:1200px){
+    .excursion{
+        &__img{
+            margin-left: 0;
+            &__label{
+                top:10%;
+                left: 0;
+                &-purple{
+                    top: 0;
+                    border-top-left-radius: 1.6rem;
+                    border-bottom-right-radius: 1.2rem;
+                }
+            }
+        }
+        &__schedule{
+            position: absolute;
+            top: 57%;
+            right: 0%;
+            width: 55%;
+        }
+        &__info{
+            margin-top: 10%;
+        }
+    
+    }
+    .container{
+        position: relative;
+    }
+}
